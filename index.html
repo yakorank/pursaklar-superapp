@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ff6b00">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Pursaklar Süper App - PWA</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+</head>
+<body>
+    <header>
+        <h1>🚀 Pursaklar Süper App</h1>
+        <p id="header-subtitle">Her hizmet bir tık uzağınızda</p>
+        <button id="installBtn" style="display: none;">📲 Uygulamayı Yükle</button>
+    </header>
+
+    <main id="app">
+        <!-- Kategoriler Ekranı -->
+        <section id="categories-section">
+            <div id="categories-grid" class="categories-grid">
+                <div class="loading">Kategoriler yükleniyor...</div>
+            </div>
+        </section>
+
+        <!-- Hizmetler Ekranı -->
+        <section id="services-section" style="display: none;">
+            <div class="section-header">
+                <button id="back-btn" class="back-btn">← Geri</button>
+                <h2 id="category-title"></h2>
+            </div>
+            <div id="services-grid" class="services-grid"></div>
+        </section>
+
+        <!-- Sipariş Formu -->
+        <section id="order-section" style="display: none;">
+            <div class="section-header">
+                <button id="back-btn2" class="back-btn">← Geri</button>
+                <h2>Sipariş/Talep Oluştur</h2>
+            </div>
+            <div id="service-info" class="service-info-card"></div>
+            <form id="order-form" class="order-form">
+                <input type="hidden" id="service_id" name="service_id">
+                <div class="form-group">
+                    <label for="customer_name">Adınız Soyadınız *</label>
+                    <input type="text" id="customer_name" name="customer_name" required placeholder="Ahmet Yılmaz">
+                </div>
+                <div class="form-group">
+                    <label for="customer_phone">Telefon Numaranız *</label>
+                    <input type="tel" id="customer_phone" name="customer_phone" required placeholder="0532 123 45 67" pattern="05[0-9]{9}">
+                </div>
+                <div class="form-group">
+                    <label for="address">Adresiniz *</label>
+                    <textarea id="address" name="address" required rows="3" placeholder="Mahalle, Sokak, No, Daire"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="notes">Ek Notlar (Opsiyonel)</label>
+                    <textarea id="notes" name="notes" rows="2" placeholder="Örn: Kapıya kadar getirin"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">✅ Siparişi Tamamla</button>
+            </form>
+        </section>
+
+        <!-- Başarılı Sipariş -->
+        <section id="success-section" style="display: none;">
+            <div class="success-card">
+                <div class="success-icon">✅</div>
+                <h2>Siparişiniz Alındı!</h2>
+                <p>Sipariş Numaranız:</p>
+                <div class="order-id" id="order-id"></div>
+                <p class="info-text">En kısa sürede sizinle iletişime geçeceğiz.</p>
+                <button onclick="resetApp()" class="home-btn">🏠 Ana Sayfaya Dön</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Pursaklar Süper App | PWA Teknolojisi</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

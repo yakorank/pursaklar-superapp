@@ -1,0 +1,26 @@
+{
+  "name": "Pursaklar Süper App",
+  "short_name": "Pursaklar",
+  "description": "Pursaklar bölgesinin tüm hizmetleri tek uygulamada - Market, Yemek, Emlak, Mezat, Güzellik, Sağlık, Usta, Pastane",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff6b00",
+  "orientation": "portrait-primary",
+  "categories": ["business", "food", "shopping", "lifestyle"],
+  "lang": "tr",
+  "icons": [
+    {
+      "src": "https://picsum.photos/seed/pursaklar-app/192/192.jpg",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://picsum.photos/seed/pursaklar-app/512/512.jpg",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
